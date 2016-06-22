@@ -1,0 +1,2 @@
+defmodule RandomBytes do
+end
