@@ -45,6 +45,16 @@ defmodule RandomBytesTest do
       assert String.length(RandomBytes.uuid) == 36
       assert RandomBytes.uuid |> String.split("-") |> Enum.count == 5
     end
+
+    test "position 13 is a 4" do
+      position_14 = RandomBytes.uuid |> String.at(14)
+      assert position_14 == "4"
+    end
+
+    test "position 19 contains an 8,9,a, or b" do
+      position_19 = RandomBytes.uuid |> String.at(19)
+      assert String.contains?(position_19, ["8", "9", "a", "b"])
+    end
   end
 
 end
