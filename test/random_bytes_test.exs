@@ -1,7 +1,6 @@
 defmodule RandomBytesTest do
 
   use ExUnit.Case, async: true
-  doctest RandomBytes
 
   describe "base62" do
     test "defaults to 16 bytes" do
@@ -25,10 +24,6 @@ defmodule RandomBytesTest do
   describe "base16" do
     test "defaults to 16 bytes" do
       assert String.length(RandomBytes.base16) == 32
-    end
-
-    test "also called hex" do
-      assert String.length(RandomBytes.hex) == 32
     end
 
     test "not the same each time" do

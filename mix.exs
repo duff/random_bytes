@@ -1,13 +1,24 @@
 defmodule RandomBytes.Mixfile do
   use Mix.Project
 
+  @version "1.0.0"
+
   def project do
-    [app: :random_bytes,
-     version: "0.1.0",
-     elixir: "~> 1.2",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps()]
+    [
+      app: :random_bytes,
+      version: @version,
+      elixir: "~> 1.2",
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      deps: deps(),
+      name: "RandomBytes",
+      docs: [
+        source_ref: "v#{@version}",
+        extras: ["README.md"],
+        main: "readme",
+        source_url: "https://github.com/duff/random_bytes"
+      ]
+    ]
   end
 
   # Configuration for the OTP application
@@ -27,6 +38,8 @@ defmodule RandomBytes.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [ ]
+    [
+      {:ex_doc, "~> 0.11", only: :dev}
+    ]
   end
 end
