@@ -11,7 +11,9 @@ defmodule RandomBytes.Mixfile do
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
+      package: package(),
       name: "RandomBytes",
+      description: "Generate random strings in a few different formats.",
       docs: [
         source_ref: "v#{@version}",
         extras: ["README.md"],
@@ -41,5 +43,12 @@ defmodule RandomBytes.Mixfile do
     [
       {:ex_doc, "~> 0.11", only: :dev}
     ]
+  end
+
+  defp package do
+    [maintainers: ["Duff O'Melia"],
+     licenses: ["Apache 2.0"],
+     links: %{"GitHub" => "https://github.com/duff/random_bytes"},
+     files: ~w(lib mix.exs README.md LICENSE.md)]
   end
 end
