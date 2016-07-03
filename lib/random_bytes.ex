@@ -9,8 +9,9 @@ defmodule RandomBytes do
   A `base64` string typically contains the `+` and `\/` characters as its extra 2 characters.
   When the string will be used in a url, the `+` and `\/` are usually replaced with `-` and `_`.
 
-  This function returns only letters and numbers and doesn't include the two special characters.
-  The result string can contain the following characters: `A-Z`, `a-z`, `0-9`.
+  This function generates a `base62` string, not a `base64` string.  It returns only letters and
+  numbers and doesn't include the two special characters. The result string can contain the following
+  characters: `A-Z`, `a-z`, `0-9`.
 
   The length of the result string is about 4/3 of `num_bytes`.
 

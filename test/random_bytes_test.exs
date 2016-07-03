@@ -46,7 +46,7 @@ defmodule RandomBytesTest do
       assert position_14 == "4"
     end
 
-    test "position 19 contains an 8,9,a, or b" do
+    test "position 19 contains an 8, 9, a, or b" do
       position_19 = RandomBytes.uuid |> String.at(19)
       assert String.contains?(position_19, ["8", "9", "a", "b"])
     end
