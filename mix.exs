@@ -1,13 +1,13 @@
 defmodule RandomBytes.Mixfile do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.0.1"
 
   def project do
     [
       app: :random_bytes,
       version: @version,
-      elixir: "~> 1.2",
+      elixir: "~> 1.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),

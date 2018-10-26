@@ -27,7 +27,7 @@ defmodule RandomBytes do
   def base62(num_bytes \\ 16) do
     random_bytes(num_bytes)
     |> Base.encode64(padding: false)
-    |> String.replace(~r/[+\/]/, random_char)
+    |> String.replace(~r/[+\/]/, random_char())
   end
 
   @doc """
@@ -63,7 +63,7 @@ defmodule RandomBytes do
       "153282b3-0e2d-4e10-8839-cb0ee869e898"
   """
   def uuid do
-    Regex.run(uuid_regex, base16, capture: :all_but_first)
+    Regex.run(uuid_regex(), base16(), capture: :all_but_first)
     |> Enum.join("-")
     |> String.to_charlist
     |> List.replace_at(14, ?4)
