@@ -38,8 +38,6 @@ iex> RandomBytes.uuid
 "6c2bc294-a8f4-4d64-8fb4-5fda8b1d7763"
 ```
 
-## Copyright and License
+## License
 
-Copyright (c) 2016, [Duff O'Melia](https://github.com/duff)
-
-Apache 2 License (same as Elixir).  See LICENSE file for more information.
+RandomBytes source code is released under the Apache 2 License (same as Elixir). Check LICENSE file for more information.

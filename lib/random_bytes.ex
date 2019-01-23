@@ -65,10 +65,10 @@ defmodule RandomBytes do
   def uuid do
     Regex.run(uuid_regex(), base16(), capture: :all_but_first)
     |> Enum.join("-")
-    |> String.to_charlist
+    |> String.to_charlist()
     |> List.replace_at(14, ?4)
     |> List.replace_at(19, Enum.random('89ab'))
-    |> List.to_string
+    |> List.to_string()
   end
 
   defp uuid_regex do
@@ -84,5 +84,4 @@ defmodule RandomBytes do
   defp random_bytes(num) do
     :crypto.strong_rand_bytes(num)
   end
-
 end
