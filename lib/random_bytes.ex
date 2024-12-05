@@ -67,7 +67,7 @@ defmodule RandomBytes do
     |> Enum.join("-")
     |> String.to_charlist()
     |> List.replace_at(14, ?4)
-    |> List.replace_at(19, Enum.random('89ab'))
+    |> List.replace_at(19, Enum.random(~c"89ab"))
     |> List.to_string()
   end
 
@@ -75,7 +75,7 @@ defmodule RandomBytes do
     ~r/(.{8})(.{4})(.{4})(.{4})(.{12})/
   end
 
-  @base62_alphabet 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  @base62_alphabet ~c"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
   defp random_char do
     [Enum.random(@base62_alphabet)] |> to_string
